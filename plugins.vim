@@ -14,6 +14,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'sheerun/vim-polyglot'   " Language Pack
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-rooter'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'vim-ruby/vim-ruby'
   Plug 'tpope/vim-rails'
