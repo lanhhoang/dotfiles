@@ -10,7 +10,10 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'joshdick/onedark.vim'   " Theme
   Plug 'itchyny/lightline.vim'  " Colorscheme
   Plug 'preservim/nerdtree'     " File Explorer
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'preservim/nerdcommenter'
   Plug 'ryanoasis/vim-devicons' " File Icon
+  Plug 'yggdroot/indentline'
   Plug 'sheerun/vim-polyglot'   " Language Pack
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'

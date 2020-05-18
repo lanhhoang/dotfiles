@@ -23,8 +23,6 @@ nnoremap <Left> :echoe 'Use h'<CR>
 nnoremap <Right> :echoe 'Use l'<CR>
 nnoremap <Up> :echoe 'Use k'<CR>
 nnoremap <Down> :echoe 'Use j'<CR>
-" Tab to complete
-inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " Easy switch between vim split
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -50,24 +48,3 @@ onoremap in{ :<C-u>normal! f{vi{<CR>
 onoremap il{ :<C-u>normal! f}vi{<CR>
 onoremap an{ :<C-u>normal! f{va{<CR>
 onoremap al{ :<C-u>normal! f}va{<CR>
-
-" NERDTree
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Toggle
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
-
-" CoC
-let g:coc_global_extensions = [
-  \ 'coc-solargraph',
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-eslint',
-  \ 'coc-prettier',
-  \ 'coc-json',
-  \ ]
