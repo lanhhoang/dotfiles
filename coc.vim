@@ -3,6 +3,8 @@ let g:coc_global_extensions = [
   \ 'coc-solargraph',
   \ 'coc-snippets',
   \ 'coc-pairs',
+  \ 'coc-css',
+  \ 'coc-cssmodules',
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-prettier',
