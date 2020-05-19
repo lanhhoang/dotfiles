@@ -2,6 +2,8 @@
 inoremap <C-u> <Esc>ebviwUi
 " Convert current word to uppercase in normal mode
 nnoremap <C-u> ebviwU
+" Turn off search highlight
+nnoremap <Leader><Space> :nohlsearch<CR>
 " open and edit init.vim
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 " source init.vim
