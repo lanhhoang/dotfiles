@@ -21,4 +21,5 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'vim-ruby/vim-ruby'
   Plug 'tpope/vim-rails'
+  Plug 'tmux-plugins/vim-tmux'
 call plug#end()
