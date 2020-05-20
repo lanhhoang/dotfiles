@@ -7,6 +7,8 @@ let g:NERDTreeStatusline = ''
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+" Sync current buffer in NERDTree
+nnoremap <Leader>f :NERDTreeFind<CR>
 " NERDTree Git Status
 let g:NERDTreeIndicatorMapCustom = {
   \ "Modified"  : "✹",
