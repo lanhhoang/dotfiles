@@ -62,10 +62,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <Leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
-"xmap <Leader>f  <Plug>(coc-format-selected)
-"nmap <Leader>f  <Plug>(coc-format-selected)
-
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -104,6 +100,10 @@ omap ac <Plug>(coc-classobj-a)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
+
+" Formatting selected code.
+"xmap <Leader>f  <Plug>(coc-format-selected)
+"nmap <Leader>f  <Plug>(coc-format-selected)
 
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
