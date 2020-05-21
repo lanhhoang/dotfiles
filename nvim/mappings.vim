@@ -4,6 +4,9 @@ inoremap <C-u> <Esc>ebviwUi
 nnoremap <C-u> ebviwU
 " Turn off search highlight
 nnoremap <Leader><Space> :nohlsearch<CR>
+" Split pane vertically and horizontally
+nnoremap <Leader>v :vs<CR>
+nnoremap <Leader>h :sp<CR>
 " open and edit init.vim
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 " source init.vim
