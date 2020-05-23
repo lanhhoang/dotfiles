@@ -87,6 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -99,7 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim="nvim"
 
+# Powerlevel9k settings
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(rbenv node_version)
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
