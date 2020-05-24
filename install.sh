@@ -41,6 +41,7 @@ function check_installed {
 
 function install_macos {
   if [[ $OSTYPE != darwin* ]]; then
+    echo "Installing script currently does not support $OSTYPE"
     return
   fi
 
