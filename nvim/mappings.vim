@@ -34,7 +34,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Go to the begin or the end of line while editing
-inoremap <C-e> <C-o>0
+inoremap <C-w> <C-o>0
 inoremap <C-e> <C-o>$
 
 " Auto indent, set no wrap for HTML file
