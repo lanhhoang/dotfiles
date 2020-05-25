@@ -109,11 +109,6 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 
-# Powerlevel9k settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(rbenv node_version)
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
-
 # export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
