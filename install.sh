@@ -1,34 +1,6 @@
 #!/bin/bash
 
-set -xv
-
-while test $# -gt 0; do 
-  case "$1" in
-    --help)
-      echo "Help"
-      exit
-      ;;
-    --macos)
-      echo $OSTYPE
-      install_macos
-      backup
-      link_dotfiles
-      zsh
-      source ~/.zshrc
-      exit
-      ;;
-    --backup)
-      echo 'backup'
-      backup
-      exit
-      ;;
-    --dotfiles)
-      echo 'link_dotfiles'
-      link_dotfiles
-      exit
-      ;;
-  esac
-done
+#set -xv # enable debugging
 
 function check_installed {
   # set to 1 initially
@@ -154,9 +126,9 @@ function link_dotfiles {
   ln -s $(pwd)/zshrc ~/.zshrc
   ln -s $(pwd)/tmux.conf ~/.tmux.conf
 
-  if [ ! -d "$ZSH/custom/themes/powerlevel9k" ]; then
-    echo "Installing powerlevel9k theme"
-    git clone https://github.com/bhilburn/powerlevel9k.git $ZSH/custom/themes/powerlevel9k
+  if [ ! -d "$ZSH/custom/themes/powerlevel10k" ]; then
+    echo "Installing powerlevel10k theme"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/custom/themes/powerlevel10k
   fi
 
   if [ ! -d "$ZSH/custom/plugins/zsh-autosuggestions" ]; then
@@ -173,4 +145,36 @@ function link_dotfiles {
   mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 
   ln -s $(pwd)/nvim $XDG_CONFIG_HOME/nvim
+  cd $XDG_CONFIG_HOME/nvim
+  pip3 install --user pynvim
 }
+
+while test $# -gt 0; do
+  case "$1" in
+    --help)
+      echo "Help"
+      exit
+      ;;
+    --macos)
+      echo $OSTYPE
+      install_macos
+      backup
+      link_dotfiles
+      zsh
+      source ~/.zshrc
+      exit
+      ;;
+    --backup)
+      echo 'backup'
+      backup
+      exit
+      ;;
+    --dotfiles)
+      echo 'link_dotfiles'
+      link_dotfiles
+      exit
+      ;;
+  esac
+
+  shift
+done
