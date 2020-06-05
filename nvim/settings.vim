@@ -1,6 +1,6 @@
 let mapleader=','
 "let maplocalleader='\\'
-let g:python3_host_prog = expand("~/.pyenv/shims/python3")
+let g:python3_host_prog = expand("~/.asdf/shims/python3")
 
 syntax on
 filetype plugin indent on
