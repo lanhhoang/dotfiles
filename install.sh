@@ -55,22 +55,17 @@ function install_macos {
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   fi
 
-  if [ "$(check_installed pyenv)" == "1" ]; then
-    echo "Install Python version manager"
-    brew install pyenv
-    pyenv install 2.7.17
-    pyenv install 3.8.0
-    pyenv global 2.17.17 3.8.0
-  fi
-
-  if [ "$(check_installed rbenv)" == "1" ]; then
-    echo "Install Ruby version manager"
-    brew install rbenv
-  fi
-
-  if [ "$(check_installed node)" == "0" ]; then
-    echo "Installing Node"
-    brew install node
+  if [ "$(check_installed asdf)" == "1" ]; then
+    echo "Install asdf version manager"
+    brew install asdf
+    echo "Install Python plugin for asdf"
+    asdf plugin-add python
+    echo "Install Ruby plugin for asdf"
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+    echo "Install Node.js plugin for asdf"
+    brew install gpg
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
   fi
 
   if [ "$(check_installed nvim)" == "0" ]; then
@@ -125,6 +120,7 @@ function link_dotfiles {
 
   ln -s $(pwd)/zshrc ~/.zshrc
   ln -s $(pwd)/tmux.conf ~/.tmux.conf
+  ln -s $(pwd)/tmate.conf ~/.tmate.conf
 
   if [ ! -d "$ZSH/custom/themes/powerlevel10k" ]; then
     echo "Installing powerlevel10k theme"
@@ -160,7 +156,7 @@ while test $# -gt 0; do
       install_macos
       backup
       link_dotfiles
-      zsh
+      #zsh
       source ~/.zshrc
       exit
       ;;
